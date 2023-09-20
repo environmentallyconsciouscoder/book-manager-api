@@ -112,10 +112,9 @@ public class BookManagerControllerTests {
     @Test
     public void testDeleteBookById() throws Exception {
 
-        Book book = new Book(4L, "Book Four", "This is the description for Book Four", "Person Four", Genre.Fantasy);
-
+        long id = 4L;
         this.mockMvcController.perform(
-                        MockMvcRequestBuilders.delete("/api/v1/book/" + "4L"))
+                        MockMvcRequestBuilders.delete("/api/v1/book/" + id))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
 
